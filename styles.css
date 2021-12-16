@@ -1,0 +1,1018 @@
+/* Colour Variables */
+:root {
+  --verylightpurple: #CB1FB2;
+  --lightpurple: #991786;
+  --purple: #5D0E51;
+  --orange: #FFC000;
+  --peach: #D8EBCD;
+  --lightblue: #00B0F0;
+}
+
+body, html, nav, h1 {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background-attachment: fixed;
+  color: white;
+  font-family: "Gill Sans MT";
+  background-color: transparent;
+  scrollbar-gutter: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 7.5px;
+  background-color: var(--purple);
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: var(--lightpurple);
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--verylightpurple);
+}
+
+h1 {
+  box-sizing: border-box;
+  font-family: "Brush Script MT";
+  font-size: 4rem;
+  font-weight: lighter;
+  padding: 0 30px;
+  margin: 100px 0 0 0;
+  text-align: center;
+}
+
+/* To prevent the h1 with the image from being indented */
+.h1-img {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("curtain.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+/********************BANNER********************/
+/* .banner {
+  height: auto;
+  width: 100%;
+  object-fit: fill;
+} */
+.banner {
+  max-width: 600px;
+  width: 80%;
+  animation-name: bannerExpander;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes bannerExpander {
+  from{transform: scale(0.4);}
+  to{transform: scale(1);}
+}
+
+/********************NAVBAR********************/
+nav {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid var(--purple);
+  display: flex;
+  flex-direction: row;
+  font-family: "Gill Sans MT";
+  height: 75px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  align-items: center;
+}
+
+.brand-img {
+  box-sizing: border-box;
+  height: 75px;
+  padding: 10px 0 10px 20px;
+}
+
+.link-div {
+  box-sizing: border-box;
+  transition: bottom 0.2s ease;
+  display: inline-flex;
+  height: 75px;
+  line-height: 75px;
+  align-items: center;
+}
+
+.nav-link {
+  box-sizing: border-box;
+  color: var(--purple);
+  font-size: 1.1rem;
+  line-height: 90%;
+  height: 90%;
+  margin: 0;
+  padding: 20px 40px;
+  text-decoration: none;
+  opacity: 0.7;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-indent: 12px;
+}
+
+.nav-span {
+  line-height: 75px;
+  height: 75px;
+}
+
+.nav-link:hover {
+  opacity: 0.85;
+}
+
+.active {
+  opacity: 1;
+}
+
+.nav-link img {
+  bottom: 2px;
+  height: 35px;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 auto;
+  display: block;
+}
+
+.burger {
+  border-radius: 7.5px;
+  bottom: 2px;
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  padding: 10px;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 20px 0 0;
+  transition: background-color 0.15s ease;
+}
+
+.burger:hover {
+  background-color: rgba(153, 23, 134, 0.2);
+}
+
+/* Responsive Design for Navbar */
+/* To remove nav-link text */
+@media (max-width: 1100px) {
+  .nav-snap {
+    display: block;
+    font-size: 14px;
+    padding: 4px 0 0;
+    margin: 0;
+    line-height: 14px;
+    text-align: center;
+    text-indent: 0;
+    font-weight: lighter;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    line-height: 100%;
+    align-items: center;
+    position: relative;
+    bottom: 5px;
+    padding-bottom: 5px;
+  }
+
+  .nav-link img {
+    height: 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  .brand {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /*To make the nav-links with only the img equal in size even when the viewport width decreases*/
+  .nav-link {
+    padding: 20px 0;
+    text-align: center;
+    width: 20%;
+  }
+
+  .link-div {
+    background-color: rgba(255, 255, 255, 0.85);
+    /* backdrop-filter: blur(10px); */
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom: -100px;
+    border-top: 2px solid var(--purple);
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.link-div-show {
+  bottom: 0;
+}
+
+/********************MAIN********************/
+main {
+  padding-top: 50px;
+  position: relative;
+  width: 100%;
+  transition: filter 0.2s ease;
+}
+
+.blur {
+  filter: none;
+}
+
+@media (max-width: 750px) {
+  .blur {
+    filter: blur(7.5px);
+  }
+}
+
+/********************HOME-SECTIONS********************/
+.des-h2 {
+  font-family: "Brush Script MT";
+  font-size: 4rem;
+  font-weight: 100;
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .des-h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .des-h2 {
+    font-size: 2.75rem;
+  }
+}
+
+.des-p {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  margin: 40px 0;
+  width: 400px;
+}
+
+.floating-notes {
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  right: 40px;
+  border-radius: 100%;
+  line-height: 40px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  animation-name: moveUpDown;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.floating-thread {
+  border-right: 2px solid;
+  border-right-color: transparent;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 60px;
+  animation-name: longerShorter;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes longerShorter {
+  0% {
+    height: 15px;
+    border-right-color: var(--purple);
+  }
+
+  50% {
+    height: 50px;
+    border-right-color: var(--lightpurple);
+  }
+
+  100% {
+    height: 15px;
+    border-right-color: var(--purple);
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    top: 15px;
+    background-color: var(--purple);
+  }
+
+  50% {
+    top: 50px;
+    background-color: var(--lightpurple);
+  }
+
+  100% {
+    top: 15px;
+    background-color: var(--purple);
+  }
+}
+
+/***************INTRO***************/
+.intro {
+  background-color: white;
+  color: var(--purple);
+  padding: 50px 15%;
+  position: relative;
+  box-sizing: content-box;
+  margin-top: 100vh;
+}
+
+.intro-h2-img {
+  height: 100px;
+}
+
+.des-div {
+  /* To make the p and the img spread apart */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.piano {
+  float: right;
+  width: 300px;
+}
+
+@media (max-width: 850px) {
+
+  /* To make the piano below the paragraph */
+  .des-div {
+    flex-direction: column;
+  }
+
+  .des-p {
+    /* To set the alignment to justify */
+    text-align: justify;
+    /* To make them the same width */
+    width: 100%;
+  }
+
+  .piano {
+    width: 100%;
+  }
+}
+
+/* To make the piano img within the intro div because without the clearfix trick the img as it is a floating item will go off the intro div*/
+.intro::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/********************INSTRUMENTS********************/
+.instruments {
+  background-color: var(--purple);
+  padding: 75px 15%;
+}
+
+.instruments-table {
+  display: block;
+  margin: 50px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.instrument-tr td {
+  width: 33%;
+}
+
+.instruments-table img {
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  padding: 40px;
+  transition: box-shadow 0.25s ease;
+  width: 100%;
+}
+
+.instruments-table img:hover {
+  box-shadow: 0 0 5px lightblue;
+}
+
+@media (max-width: 1200px) {
+  .instruments-table {
+    overflow-x: scroll;
+    padding: 0 20px;
+  }
+
+  .instruments-table img {
+    width: 280px;
+  }
+}
+
+/* SCROLLBAR FOR THE INSTRUMENTS TABLE */
+.instruments-table::-webkit-scrollbar {
+  border-radius: 20px;
+  box-shadow: 0 0 1px black inset;
+  height: 10px;
+}
+
+.instruments-table::-webkit-scrollbar-thumb {
+  background-color: var(--lightpurple);
+  border-radius: 20px;
+}
+
+/********************FOOTER********************/
+footer {
+  background-color: white;
+  color: var(--purple);
+  display: flex;
+  flex-direction: row;
+  padding: 100px 20%;
+}
+
+.footer-div {
+  border-left: 1px solid var(--purple);
+  display: block;
+  padding-left: 30px;
+  width: 50%;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+@media (max-width: 920px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-div {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}
+
+/********************CREATOR********************/
+.creator-icon {
+  margin-right: 20px;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.creator-p {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+/********************FOOTER-LINKS********************/
+.footer-links-ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.footer-link-li {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.footer-link {
+  color: var(--purple);
+  cursor: not-allowed;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.link-icon {
+  bottom: 2px;
+  position: relative;
+  vertical-align: middle;
+  width: 20px;
+}
+
+/********************SHOP********************/
+/* To add padding around the cards */
+.card-container {
+  box-sizing: border-box;
+  padding: 75px 100px;
+  width: 100%;
+}
+
+.card-wrapper {
+  display: inline-block;
+  margin: 15px 0;
+  text-align: center;
+  width: 33%;
+}
+
+/* To change the number of cards displayed in each row */
+@media (max-width: 1300px) {
+  .card-wrapper {
+    width: 49.5%;
+  }
+}
+
+@media (max-width: 800px) {
+  .card-wrapper {
+    width: 100%;
+  }
+}
+
+.card {
+  background-color: white;
+  border: 5px solid var(--purple);
+  border-radius: 20px;
+  box-shadow: 0 0 11px black;
+  box-sizing: border-box;
+  color: var(--purple);
+  display: block;
+  padding: 20px 0 0;
+  text-align: center;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Shop Card */
+.shop-card {
+  display: inline-block;
+  width: 250px;
+  position: relative;
+}
+
+/* To change the size of the card on hover. The increased blur of the box-shadow gives the effect that the card is coming towards the user */
+.shop-card:hover {
+  box-shadow: 0 0 25px black;
+  transform: scale(1.025);
+}
+
+.card-img-div {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  justify-content: center;
+}
+
+.card-img {
+  margin-bottom: 20px;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--purple);
+  height: 0;
+}
+
+.instrument-name {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.instrument-price {
+  font-size: 1rem;
+}
+
+.instrument-price::before {
+  content: "Rs. ";
+}
+
+.original-price {
+  text-decoration: line-through;
+  margin-bottom: 10px;
+}
+
+.offer-price {
+  margin-top: 0;
+}
+
+.card-offer {
+  border-top: none;
+  border-bottom: 50px solid #C00000;
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+  height: 0;
+  width: 80px;
+  position: absolute;
+  top: 20px;
+  left: -45px;
+  color: white;
+  opacity: 0.9;
+  transform: rotate(315deg);
+}
+
+.card-offer-text::after {
+  content: "% OFF";
+}
+
+.more-p {
+  bottom: 100px;
+  display: inline-block;
+  font-family: "Brush Script MT";
+  font-size: 2rem;
+  margin: 0 30px;
+  position: relative;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .more-p {
+    width: 100%;
+    position: static;
+  }
+}
+
+/********************OFFER********************/
+.offer-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.offer {
+  bottom: 0;
+  right: 0;
+  color: white;
+  position: fixed;
+  background-color: #C00000;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  height: 60px;
+  line-height: 60px;
+  width: calc(100% - 60px);
+  display: inline;
+  transition: bottom 0.2s ease;
+  z-index: 1;
+  text-align: center;
+}
+
+.offer-img {
+  height: 2.3rem;
+  vertical-align: text-bottom;
+}
+
+.offer-close-btn {
+  bottom: 0;
+  background-color: #C00000;
+  color: white;
+  position: fixed;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  height: 60px;
+  line-height: 60px;
+  width: 60px;
+  display: inline;
+  border: none;
+  z-index: 2;
+  border-right: 1px solid black;
+  transition: bottom 0.2s ease;
+  cursor: pointer;
+}
+
+.offer-hidden {
+  bottom: -60px;
+}
+
+/* ABOUT CARD */
+.about-card {
+  display: block;
+  margin: 30px auto;
+  min-width: 600px;
+  padding: 0;
+  width: 50%;
+}
+
+.about-img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.about-img-replace {
+  display: none;
+}
+
+.about-details-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 30px 30px;
+}
+
+.about-details-div-second {
+  padding-top: 0;
+}
+
+@media (max-width: 750px) {
+
+  /* To make the about-details sit one on top of the other */
+  .about-details-div {
+    flex-direction: column;
+  }
+
+  .about-card {
+    min-width: 300px;
+  }
+
+  /* To replace the larger image with a smaller image at 750 px */
+  .about-img {
+    display: none;
+  }
+
+  .about-img-replace {
+    display: block;
+  }
+}
+
+.about-details {
+  text-align: left;
+}
+
+.about-h3 {
+  font-family: "Brush Script MT";
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.about-ul {
+  font-size: 1.1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.about-li {
+  margin: 5px;
+}
+
+/********************MOVE-BTNS********************/
+.move-btn {
+  background-color: var(--purple);
+  border: 2px solid var(--color);
+  border-radius: 10px;
+  bottom: 30px;
+  box-sizing: border-box;
+  color: var(--color);
+  font-family: "Gill Sans MT";
+  font-size: 1.1rem;
+  opacity: 0.75;
+  padding: 12px 15px;
+  position: fixed;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, bottom 0.2s ease;
+}
+
+.offer-lift {
+  bottom: 80px;
+}
+
+.move-btn:hover {
+  background-color: var(--color);
+  color: var(--purple);
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 0 0 10px black;
+}
+
+/* Colour variables and position for the different move-btns */
+.order-btn {
+  --color: yellow;
+  animation-name: moveFromRight;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  right: 30px;
+}
+
+@keyframes moveFromRight {
+  from {right: -100px;}
+  to {right: 30px;}
+}
+
+.back-btn {
+  --color: #F470F4;
+  left: 30px;
+  animation-name: moveFromleft;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes moveFromleft {
+  from {left: -100px;}
+  to {left: 30px;}
+}
+
+.up-btn {
+  background-color: transparent;
+  border: 2px solid #F470F4;
+  border-radius: 100%;
+  bottom: 30px;
+  color: #F470F4;
+  font-family: "Gill Sans MT";
+  font-size: 1.3rem;
+  font-weight: 900;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 30px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 30px;
+  animation-name: moveFromUp;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes moveFromUp {
+  from {bottom: -100px;}
+  to {bottom: 30px;}
+}
+
+.up-btn:hover {
+  background-color: #F470F4;
+  color: white;
+  cursor: pointer;
+}
+
+/********************FORM********************/
+form {
+  background-color: white;
+  border: 5px solid var(--purple);
+  border-radius: 20px;
+  box-shadow: 0 0 11px black;
+  box-sizing: border-box;
+  color: var(--purple);
+  display: block;
+  margin: 20px auto;
+  padding: 30px;
+  width: 450px;
+}
+
+@media (max-width: 650px) {
+
+  /* To change the width of the form */
+  form {
+    width: 325px;
+  }
+
+  /* To make the label and the input boxes on different lines */
+  .input-details {
+    display: block;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.div-input-details {
+  display: block;
+  margin: 20px 0;
+}
+
+label {
+  font-size: 1.1rem;
+}
+
+.label-block {
+  display: block;
+  margin: 20px 0 10px;
+}
+
+input[placeholder], textarea {
+  border: 2px solid var(--purple);
+  border-radius: 5px;
+  color: var(--lightpurple);
+  font-family: "Gill Sans MT";
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  padding: 0 5px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--lightpurple);
+  opacity: 0.6;
+}
+
+input[type="number"] {
+  width: 150px;
+}
+
+textarea {
+  display: block;
+  /* to avoid the textarea becoming too big or too small on resizing */
+  max-width: 310px;
+  max-height: 500px;
+  min-width: 100px;
+  min-height: 75px;
+}
+
+.radio-div {
+  display: block;
+  margin: 5px 0;
+}
+
+input[type="radio"] {
+  accent-color: var(--purple);
+  cursor: pointer;
+  display: inline;
+  position: relative;
+  top: 1px;
+  vertical-align: text-top;
+}
+
+input[type="radio"]+p {
+  display: inline;
+}
+
+.lightpurple {
+  color: var(--lightpurple);
+}
+
+.form-btn-div {
+  margin-top: 10px;
+  text-align: right;
+}
+
+input[type="reset"], input[type="submit"] {
+  background-color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 7.5px;
+  color: white;
+  cursor: pointer;
+  font-family: "Gill Sans MT";
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin-left: 5px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+input[type="reset"]:hover, input[type="submit"]:hover {
+  background-color: var(--color2);
+  border-color: var(--color2);
+}
+
+/* Colour Variables for Form btns */
+input[type="reset"] {
+  --color: var(--lightpurple);
+  --color2: #821472;
+}
+
+input[type="submit"] {
+  --color: var(--purple);
+  --color2: #36082F;
+}
+
+/********************THANK********************/
+.thank-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.thank-h1 {
+  font-size: 10rem;
+}
+
+.thank-p {
+  font-size: 2rem;
+}

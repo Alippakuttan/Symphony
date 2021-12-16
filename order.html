@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body background="curtain.png">
+  <nav>
+    <a href="index.html" class="brand"><img src="symphony-logo.png" alt="Symphony-Logo" title="Symphony, the world's best music store and school" class="brand-img"></a>
+    <div class="link-div">
+      <a href="index.html" class="nav-link" title="Home"><img src="home-icon.png"> <span class="nav-snap">Home</span></a>
+      <a href="about.html" class="nav-link" title="About Us"><img src="about-icon.png"> <span class="nav-snap">About Us</span></a>
+      <a href="shop.html" class="nav-link" title="Shop"><img src="music-player.png"> <span class="nav-snap">Shop</span></a>
+      <a href="order.html" class="nav-link active" title="Order"><img src="shopping-cart.png"> <span class="nav-snap">Order</span></a>
+      <a href="teach-me.html" class="nav-link" title="Teach Me"><img src="maestro.png"> <span class="nav-snap">Teach Me</span></a>
+    </div>
+    <img src="burger.png" class="burger">
+  </nav>
+
+  <main>
+    <h1 class="h1">𝅘𝅥𝅮 Let Your Dreams Come True! 𝅘𝅥𝅮</h1>
+    <form action="thank.html" method="post">
+      <div class="div-input-details">
+        <label for="first-name">First name:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Your first name" required>
+      </div>
+
+      <div class="div-input-details">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Your last name" required>
+      </div>
+
+      <div class="div-input-details">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Your e-mail" required>
+      </div>
+
+
+      <label for="order" class="label-block">What do you need ?</label>
+      <textarea id="order" name="order" rows="3" cols="20" placeholder="Your order" required></textarea>
+
+      <label for="delivery" class="label-block">Do you want your order to be delivered ?</label>
+      <div class="radio-div">
+        <input type="radio" name="delivery" value="Yes" required>
+        <p>&nbspYes</p>
+      </div>
+      <div class="radio-div">
+        <input type="radio" name="delivery" value="No" required>
+        <p>&nbspNo</p>
+      </div>
+
+      <label for="address" class="label-block">Your address</label>
+      <textarea id="address" name="address" rows="3" cols="20" placeholder="Your address" required></textarea>
+
+      <div class="div-input-details">
+        <label for="tel" class="label-block">Telephone number:</label>
+        <input type="tel" id="tel" name="telephone" placeholder="Your telephone number" required>
+      </div>
+
+      <p class="note">Note: <span class="lightpurple">Money transaction can be made at store or at delivery.<br>Delivery only in Luthinia</span></p>
+      <div class="form-btn-div">
+        <input type="reset" name="reset" value="Reset">
+        <input type="submit" name="submit" value="Order">
+      </div>
+
+    </form>
+  </main>
+
+  <a href="index.html"><button type="button" class="back-btn move-btn">ᐊ&nbsp Home</button></a>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Teach Me</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body background="curtain.png">
+  <nav>
+    <a href="index.html" class="brand"><img src="symphony-logo.png" alt="Symphony-Logo" title="Symphony, the world's best music store and school" class="brand-img"></a>
+    <div class="link-div">
+      <a href="index.html" class="nav-link" title="Home"><img src="home-icon.png"> <span class="nav-snap">Home</span></a>
+      <a href="about.html" class="nav-link" title="About Us"><img src="about-icon.png"> <span class="nav-snap">About Us</span></a>
+      <a href="shop.html" class="nav-link" title="Shop"><img src="music-player.png"> <span class="nav-snap">Shop</span></a>
+      <a href="order.html" class="nav-link" title="Order"><img src="shopping-cart.png"> <span class="nav-snap">Order</span></a>
+      <a href="teach-me.html" class="nav-link active" title="Teach Me"><img src="maestro.png"> <span class="nav-snap">Teach Me</span></a>
+    </div>
+    <img src="burger.png" class="burger">
+  </nav>
+
+  <main>
+    <h1 class="h1">𝅘𝅥𝅮 Let's Be Musicians! 𝅘𝅥𝅮</h1>
+    <form action="thank.html" method="post">
+      <div class="div-input-details">
+        <label for="first-name">First name:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Your first name" required>
+      </div>
+
+      <div class="div-input-details">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Your last name" required>
+      </div>
+
+      <div class="div-input-details">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Your e-mail" required>
+      </div>
+
+      <label for="gender" class="label-block">Gender:</label>
+      <div class="radio-div">
+        <input type="radio" name="gender" value="Male">
+        <p>&nbspMale</p>
+      </div>
+      <div class="radio-div">
+        <input type="radio" name="gender" value="Female">
+        <p>&nbspFemale</p>
+      </div>
+      <div class="radio-div">
+        <input type="radio" name="gender" value="Other">
+        <p>&nbspOther</p>
+      </div>
+
+      <div class="div-input-details">
+        <label for="age">Age:</label>
+        <input type="Number" id="age" name="age" placeholder="Your age" max="100" min="1">
+      </div>
+
+      <div class="div-input-details">
+        <label for="instrument" class="label-block">Which instrument do you want to play ?</label>
+        <input type="text" id="instrument" name="instrument" placeholder="Your instrument" required>
+      </div>
+
+      <label for="excellency" class="label-block">How good are you at playing music:</label>
+      <div class="radio-div">
+        <input type="radio" name="excellency" value="starter" required>
+        <p>&nbspI have never touched an instrument</p>
+      </div>
+      <div class="radio-div">
+        <input type="radio" name="excellency" value="Medium" required>
+        <p>&nbspI have learnt a little</p>
+      </div>
+      <div class="radio-div">
+        <input type="radio" name="excellency" value="Advanced" required>
+        <p>&nbspI have learnt a lot and I'm hoping to improve</p>
+      </div>
+
+      <div class="div-input-details">
+        <label for="date">When will you start ?</label>
+        <input type="date" id="date" name="date" placeholder="Date" required>
+      </div>
+
+      <p class="note">Note: <span class="lightpurple">Monthly fee will be decided at store</span></p>
+
+      <div class="form-btn-div">
+        <input type="reset" name="reset" value="Reset">
+        <input type="submit" name="submit" value="Submit">
+      </div>
+    </form>
+  </main>
+
+  <a href="index.html"><button type="button" class="back-btn move-btn">ᐊ&nbsp Home</button></a>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
