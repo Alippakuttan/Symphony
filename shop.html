@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Symphony Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Source+Sans+Pro&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -20,13 +24,13 @@
     <img src="burger.png" class="burger">
   </nav>
   <main>
-    <h1 class="h1">𝅘𝅥𝅮 Incredible Instruments 𝅘𝅥𝅮</h1>
+    <h1 class="h1"><img src="eigth-note.png">   Incredible Instruments   <img src="eigth-note.png"></h1>
     <div class="card-container">
 
       <div class="card-wrapper">
         <div class="card shop-card">
           <div class="card-img-div">
-            <img src="Accordion.jpg" alt="Accordion-img" class="card-img">
+            <img src="accordion.jpg" alt="Accordion-img" class="card-img">
           </div>
           <hr>
           <p class="instrument-name">Accordion</p>
@@ -42,7 +46,7 @@
       <div class="card-wrapper">
         <div class="card shop-card">
           <div class="card-img-div">
-            <img src="Drums.png" alt="Drums-img" class="card-img">
+            <img src="drums.png" alt="Drums-img" class="card-img">
           </div>
           <hr>
           <p class="instrument-name">Drums</p>
@@ -58,7 +62,7 @@
       <div class="card-wrapper">
         <div class="card shop-card">
           <div class="card-img-div">
-            <img src="Piano.jpg" alt="Piano-img" class="card-img">
+            <img src="piano.jpg" alt="Piano-img" class="card-img">
           </div>
           <hr>
           <p class="instrument-name">Piano</p>
@@ -102,16 +106,19 @@
     </div>
 
     <div class="offer-wrapper">
-      <button type="button" class="offer-close-btn"><img src="close-btn.png" alt="close-icon"  class="offer-img"></button>
-      <div class="offer"><img src="wreath.png" alt="wreath" class="offer-img">&nbsp&nbsp&nbsp&nbsp Christmas Offer: upto 30% OFF &nbsp&nbsp&nbsp&nbsp<img src="tree.png" alt="tree"  class="offer-img"></div>
+      <button type="button" class="offer-close-btn"><img src="close-btn.png" alt="close-icon" class="offer-img"></button>
+      <div class="offer"><img src="wreath.png" alt="wreath" class="offer-img">&nbsp&nbsp&nbsp&nbsp Christmas Offer: upto 30% OFF &nbsp&nbsp&nbsp&nbsp<img src="tree.png" alt="tree" class="offer-img"></div>
     </div>
-
-    <script src="offer.js" charset="utf-8"></script>
 
   </main>
   <a href="index.html"><button type="button" class="back-btn move-btn shop-btn offer-lift">ᐊ&nbsp Home</button></a>
   <a href="order.html"><button type="button" class="order-btn move-btn shop-btn offer-lift">Order Now</button></a>
+
+  <button type="button" class="up-btn up-btn-invisible"><span>ᐱ</span></button>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="index.js" charset="utf-8"></script>
+  <script src="comma.js" charset="utf-8"></script>
 </body>
 
 </html>

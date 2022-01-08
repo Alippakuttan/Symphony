@@ -1,42 +1,48 @@
 // To show the navbar when the burger is clicked
 
-document.querySelector(".burger").addEventListener("click", function (){
-  document.querySelector(".link-div").classList.toggle("link-div-show");
-  document.querySelector("main").classList.toggle("blur");
-  document.querySelector("footer").classList.toggle("blur");
-  document.querySelector("h1").classList.toggle("blur");
+$(".burger").click(function () {
+  $(".link-div").toggleClass("link-div-show");
+  $("main").toggleClass("blur");
+  $("footer").toggleClass("blur");
+  $("h1").toggleClass("blur");
 });
+
 
 // To close the offer on the shop page
 
-document.querySelector(".offer-close-btn").addEventListener("click", function() {
-  document.querySelector(".offer").classList.add("offer-hidden");
-  document.querySelector(".offer-close-btn").classList.add("offer-hidden");
-  var shopBtnNumber = document.getElementsByClassName("shop-btn").length;
-  for (var i = 0; i < shopBtnNumber; i++) {
-    document.querySelectorAll(".shop-btn")[i].classList.toggle("offer-lift");
+$(".offer-close-btn").click(function() {
+  $(".offer").addClass("offer-hidden");
+  $(".offer-close-btn").addClass("offer-hidden");
+  $(".shop-btn").removeClass("offer-lift");
+});
+
+// To calculate the new price using the dicount and initial value
+
+var numberOfCards = document.getElementsByClassName("shop-card").length;
+for (var o = 0; o < numberOfCards; o++){
+  findOfferPrice(o);
+}
+
+function findOfferPrice (o) {
+  var originalPrice = document.querySelectorAll(".original-price")[o].textContent;
+  var offerPercent = document.querySelectorAll(".card-offer-text")[o].textContent;
+  document.querySelectorAll(".offer-price")[o].textContent = originalPrice - ((originalPrice * offerPercent) / 100);
+}
+
+$(document).scroll(function() {
+  if (window.scrollY > 400) {
+    $(".up-btn").removeClass("up-btn-invisible");
+  } else {
+    if ($(".up-btn").hasClass("up-btn-invisible") === false) {
+      $(".up-btn").addClass("up-btn-invisible");
+    }
   }
 });
 
-// To add a comma after three places from the verylightpurple
-var numberOfInstrumentPrices = document.getElementsByClassName("instrument-price").length;
-var j = 0;
-while (j < numberOfInstrumentPrices) {
-  addCommas(j);
-  j++;
-};
-
-function addCommas(j) {
-  var value = document.querySelectorAll(".instrument-price")[j].innerHTML;
-  var newValue = 0;
-  var cutValue;
-  while (value.length > 3) {
-    cutValue = value.slice(value.length-3 , value.length);
-    cutValue = "," + cutValue;
-    newValue = cutValue + newValue;
-    value = value.slice(0, value.length - 3);
-  }
-  newValue = value + newValue;
-  newValue = newValue.slice(0, newValue.length - 1);
-  document.querySelectorAll(".instrument-price")[j].innerHTML = newValue;
-}
+$(".up-btn").click(function () {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});
