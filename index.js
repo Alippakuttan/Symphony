@@ -7,6 +7,12 @@ $(".burger").click(function () {
   $("h1").toggleClass("blur");
 });
 
+$("main").click(function () {
+  $(".link-div").removeClass("link-div-show");
+  $("main").removeClass("blur");
+  $("footer").removeClass("blur");
+  $("h1").removeClass("blur");
+});
 
 // To close the offer on the shop page
 
